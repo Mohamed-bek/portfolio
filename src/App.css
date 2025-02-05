@@ -1,0 +1,268 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary-color: #000000;
+  --secondary-color: #3ccf91;
+  --tertiary-color: #8f9094;
+  --font-size-base: 1rem;
+  --background: #ffffff;
+  --foreground: #171717;
+}
+
+html {
+  background-color: var(--primary-color);
+  scroll-behavior: smooth;
+}
+body {
+  height: max-content;
+  font-family: "Inter", serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+#Container {
+  transition: 0.3s;
+}
+.layerFilter {
+  position: fixed;
+  z-index: 1000;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0);
+  scale: 0;
+}
+
+.layerFilter.active {
+  scale: 100;
+  animation: darkenFilter 0.5s forwards;
+}
+
+.Hed.active {
+  transform: translateY(120px);
+  width: 400px;
+  transition: 0.5s;
+}
+.Hed.active.activeBack {
+  width: 60px;
+  height: 60px;
+  transform: translateY(0px);
+  transition: 0.5s;
+}
+.links a {
+  transform: scale(0);
+  /* transition: 5s; */
+}
+.links.active a {
+  transform: scale(1);
+}
+@keyframes darkenFilter {
+  from {
+    background-color: rgba(0, 0, 0, 0);
+  }
+  to {
+    background-color: rgba(0, 0, 0, 0.6);
+  }
+}
+
+.ImageAnimation {
+  animation: imageAnimation 0.75s ease-in-out 0.5s forwards;
+}
+@keyframes imageAnimation {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 420px;
+  }
+}
+
+.ImageBgAnimation {
+  animation: imageBgAnimation 1s ease-in-out 1.25s forwards;
+}
+@keyframes imageBgAnimation {
+  0% {
+    transform: translateX(100%);
+  }
+  50% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.ImgAnimation {
+  animation: imgAnimation 0.85s ease-in-out 1.35s forwards;
+}
+@keyframes imgAnimation {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+#About > div {
+  background: linear-gradient(
+    to right,
+    var(--primary-color) 25%,
+    var(--primary-color) 25%,
+    var(--primary-color) 25%,
+    var(--primary-color) 100%
+  );
+}
+
+.pattern {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(to bottom, transparent 49.5%, #000 50.5%),
+    linear-gradient(to right, transparent 49.5%, #000 50.5%);
+  background-size: 20px 20px;
+  background-color: white;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.6s ease-out forwards;
+}
+
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-down {
+  animation: fadeInDown 0.2s ease-out forwards;
+}
+
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) rotate(-5deg);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(-20%) rotate(-5deg);
+  }
+}
+
+.fade-in-right {
+  animation: fadeInRight 0.2s ease-out forwards;
+}
+.flip-container {
+  perspective: 1000px; /* Adds 3D perspective */
+}
+
+.letter {
+  display: inline-block;
+  transform-style: preserve-3d;
+  animation: letterInvers 2s ease-out forwards;
+}
+
+@keyframes letterInvers {
+  0% {
+    transform: rotateZ(0deg) rotateY(0) translateY(0%);
+  }
+  10% {
+    transform: rotateZ(0deg) rotateY(0) translateY(-130%);
+  }
+  20% {
+    transform: rotateZ(-10deg) rotateY(0) translateY(-130%);
+  }
+  80% {
+    color: var(--secondary-color);
+    transform: rotateZ(-10deg) rotateY(720deg) translateY(-130%);
+  }
+  90% {
+    color: var(--secondary-color);
+    transform: rotateZ(0deg) rotateY(720deg) translateY(-130%);
+  }
+  100% {
+    color: var(--secondary-color);
+    transform: rotateZ(0deg) rotateY(720deg) translateY(0%);
+  }
+}
+
+@keyframes bounce {
+  from {
+    transform: scale(0) rotateZ(-180deg);
+  }
+  to {
+    transform: scale(1.2) rotateZ(0deg);
+  }
+}
+
+.Bounce > div {
+  animation: bounce 0.5s ease-out forwards;
+}
+
+.techDiv {
+  box-shadow: 20px 20px 100px 100px var(--secondary-color);
+}
+
+@keyframes fadeTech {
+  from {
+    opacity: 0;
+    transform: translateY(150px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-tech {
+  animation: fadeTech 0.4s ease-out forwards;
+}
+
+@keyframes scaling {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+.fade-scaling {
+  animation: scaling 0.3s ease-out forwards;
+}
+
+.shadowSociale {
+  filter: drop-shadow(0.5px 0.5px 20px black);
+}
+
+@keyframes widthShrink {
+  from {
+    width: 50%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.width-shring {
+  animation: widthShrink 0.5s ease-out 0.5s forwards;
+}
