@@ -10,7 +10,7 @@ function Projects() {
       title: "Britannia Sport and Exercise Science Academy",
       description:
         "A website highlighting the global presence of a UK-based team of sports scientists, coaches, and professionals. Built to showcase their expertise and impact across countries like Sweden, France, Morocco, and more.",
-      image: "/images/project/bsesa.png",
+      image: "/images/project/Bsesa.png",
       video: "/images/bsesa1.mp4",
       link: "https://www.bsesac.co.uk/",
       techs: [
